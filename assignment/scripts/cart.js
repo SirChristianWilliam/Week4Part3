@@ -11,15 +11,19 @@ if(item) {
     basket.push(item);
  } else {
     console.log("Fruit was added:",false);
-       
+    console.log("---undefined value not added to array---")
 }
-console.log(basket);
+console.log("Current array:",basket);
 
 };
  
 addItem("Apple");
 addItem( );
 addItem("Mango");
+addItem("Papaya");
+addItem();
+addItem("Cherry");
+
 
 //I had it written previously where the array would return the
 // undefined value, but I figured it made more sense to omit it
@@ -27,3 +31,14 @@ addItem("Mango");
 // I hope that's alright. Otherwise, I put basket.push(item)
 // outside and above the if statement, which returned all data
 // even if the data was undefined/didn't have a value. 
+console.log("---Now to loop through the array---");
+
+function listItems(arr) {
+      for(let i=0; i < arr.length; i++) {
+        console.log(arr[i]);
+         
+      }
+ };
+ 
+
+listItems(basket);
