@@ -9,11 +9,13 @@ function addItem(item) {
 if(item) {
     console.log("Fruit was added:",true);
     basket.push(item);
+
  } else {
     console.log("Fruit was added:",false);
     console.log("---undefined value not added to array---")
+    
 }
-console.log("Current array:",basket);
+console.log("Current basket:",basket);
 
 };
  
@@ -40,5 +42,11 @@ function listItems(arr) {
       }
  };
  
-
 listItems(basket);
+
+function empty(arr) {
+    arr = [];
+    console.log(arr);
+}
+
+empty(basket);
