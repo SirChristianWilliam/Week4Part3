@@ -71,7 +71,6 @@ console.log("Still globally returns",basket);
  empty3(basket);
  // End emptying array example 3.
  addItem("Apple"); // Called addItem again to test it. 
-
  console.log(basket);
 
 // So, I provided three different methods for emptying the array. The first two empty
@@ -81,3 +80,24 @@ console.log("Still globally returns",basket);
 // the global basket variable without creating a new array. I'm not fully sure
 // why this is, and sort of stumbled upon it by accident, but there ya go!
 
+console.log("----Stretch goals below!-----");
+const maxItems = 5;
+let answer;
+
+function isFull(x) {
+    if(x.length < maxItems ) {
+        answer = false;
+     } else {
+        answer = true;
+    }
+    if(answer == false) {
+        console.log(answer,"-There are less than",maxItems,"items in the basket: (",x.length,")");
+
+    } else {
+        console.log(answer,"-There are",maxItems,"or more items in the basket: (",x.length,")");
+
+     }
+}
+
+ isFull(basket);
+ 
