@@ -1,0 +1,36 @@
+ul {
+    padding:20px;
+    border:3px solid red;
+}
+li {
+    padding:5px;
+    margin-bottom:10px;
+    margin-left:10px;
+    font-size:20px;
+    transition:.6s;
+
+}
+li:hover:not(li#a){
+     color:black;
+}
+li#a {
+    color:rgb(157, 149, 149);
+}
+li#a:hover {
+    color:rgb(0, 0, 0);
+ }
+li#b {
+    color:white;
+}
+li#c {
+    color:white;
+
+}
+li#d{
+   
+    color:white;
+
+}
+body {cursor: default;}
+
+ 

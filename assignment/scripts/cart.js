@@ -100,4 +100,13 @@ function isFull(x) {
 }
 
  isFull(basket);
- 
+
+ function revealAll(event) {
+    document.getElementById("YO").style.backgroundColor = "red";
+    document.getElementsByTagName("li")[0].style.color = "white";
+    document.getElementsByTagName("li")[1].style.color = "white";
+    document.getElementsByTagName("li")[2].style.color = "white";
+
+    document.getElementsByTagName("li")[3].style.color = "white";
+
+ }
