@@ -1,14 +1,15 @@
 ul {
     padding:20px;
     border:3px solid red;
-}
+    overflow:scroll;
+     width:75%;
+ }
 li {
     padding:5px;
     margin-bottom:10px;
     margin-left:10px;
     font-size:20px;
     transition:.6s;
-
 }
 li:hover:not(li#a){
      color:black;
@@ -24,15 +25,17 @@ li#b {
 }
 li#c {
     color:white;
-
 }
 li#d{
-   
     color:white;
-
 }
 body {
     cursor: default;
+}
+p.yo {
+    color:red;
+    text-shadow:0px 0px 12px rgb(0, 0, 0);
+    font-weight: bold;
 }
 
  

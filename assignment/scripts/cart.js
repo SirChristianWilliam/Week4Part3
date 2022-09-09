@@ -16,9 +16,9 @@ function addItem(item,full) {
     // it still functions exactly as expected and required. 
 
  } else if (item && full) {
-    console.log("Fruit was added:",false)
-    console.log("Current basket:",basket);
+    console.log("Fruit was added:",false);
     console.log("Item not added:",item);
+    console.log("Current basket:",basket);
     return false;
  } else {
     console.log("Fruit was added:",false);
@@ -44,8 +44,7 @@ console.log("---Now to loop through the array---");
 
 function listItems(arr) {
       for(let i=0; i < arr.length; i++) {
-        console.log(arr[i]);
-         
+        console.log(arr[i]);  
       }
  };
  
@@ -94,7 +93,7 @@ function isFull() {
         console.log("-Can not add more than",maxItems,"items in the basket: (",basket.length,")");
         return true;
      }
- }
+ };
 
  isFull();
  
@@ -111,15 +110,15 @@ addItem("pineapple",isFull());
 addItem("Tomato",isFull());
  
 //End of stretch goal 3.
-
+console.log("-----Moving on to last challenge-----")
 function removeItem(item) {
     if(basket.indexOf(item) ===-1)  {
-        console.log(item,"not found.")
+        console.log(item,"not found.");
         console.log("Unchanged basket:",basket);
          return null;
     } else {
-        console.log(item,"found and removed");
-        console.log(basket.splice(basket.indexOf(item),1));
+        console.log(item,"found and removed:");
+        console.log("Item removed",basket.splice(basket.indexOf(item),1));
         console.log("Basket with removed item:",basket);
      }
 };
@@ -139,5 +138,4 @@ removeItem("Apple");
     document.getElementsByTagName("li")[1].style.color = "white";
     document.getElementsByTagName("li")[2].style.color = "white";
     document.getElementsByTagName("li")[3].style.color = "white";
-
  };
