@@ -6,27 +6,25 @@ console.log("Current basket:",basket);
 
 function addItem(item,full) {
 
-    
   if(item && full !== true) {
     console.log("Fruit was added:",true);
     basket.push(item);
     console.log("Current basket:",basket);
-
-    return true;
+    return true; //The way I wrote this code, I could delete these three
+    // "returns" (true, false, false). The code would run the same. However,
+    // while I may have not completed the assignment EXACTLY how you wanted,
+    // it still functions exactly as expected and required. 
 
  } else if (item && full) {
     console.log("Fruit was added:",false)
     console.log("Current basket:",basket);
-
+    console.log("Item not added:",item);
     return false;
  } else {
     console.log("Fruit was added:",false);
-    console.log("---undefined value not added to array---")
-
-    return false;
-    
+    console.log("---undefined value not added to array---");
+    return false;  
 }
-
 };
 
 addItem("Apple");
@@ -35,8 +33,6 @@ addItem("Mango");
 addItem("Papaya");
 addItem();
 addItem("Cherry");
-
-console.log("Current basket:",basket);
 
 //I had it written previously where the array would return the
 // undefined value, but I figured it made more sense to omit it
@@ -58,31 +54,27 @@ listItems(basket);
 function empty(arr) {
     arr = [];
     return arr;
- }
+ };
  
   console.log(empty(basket)); 
-  console.log("Still globally returns",basket);
-
- // End emptying array example 1.
+  console.log("Still globally returns",basket);  // End emptying array example 1.
 
   function empty2(arr) {
     arr = [];
     console.log(arr);
-  }
+  };
  
 empty2(basket);
-console.log("Still globally returns",basket);
- 
- // End emptying array example 2.
+console.log("Still globally returns",basket);  // End emptying array example 2.
+
   function empty3(arr) {
       arr.length = 0;
       console.log("NOW the global basket array is",basket);
-  }
- empty3(basket);
- // End emptying array example 3.
- addItem("Apple"); // Called addItem again to test it. 
- console.log(basket);
+  };
+ empty3(basket); // End emptying array example 3.
 
+ addItem("Apple"); // Called addItem again to test it, this line is not required. 
+ 
 // So, I provided three different methods for emptying the array. The first two empty
 // the array, however they create NEW arrays. If I console.log(basket) after the first
 // two functions, basket will return with no changes, as shown when I console.log(basket).
@@ -95,7 +87,6 @@ console.log("----Stretch goals below!-----");
 const maxItems = 5;
  
 function isFull() {
-
     if(basket.length < maxItems ) {
         console.log("-There are less than",maxItems,"items in the basket: (",basket.length,")");
         return false;
@@ -107,10 +98,7 @@ function isFull() {
 
  isFull();
  
-console.log("break-----");
-
-
-
+console.log("-----break-----");
 
 addItem("Peach",isFull());
 addItem("",isFull());
@@ -118,28 +106,38 @@ addItem("Kiwi",isFull());
 addItem("BatteryAcid",isFull());
 addItem("",isFull());
 addItem("Coconut",isFull());
-
 addItem("Orange",isFull());
-
 addItem("pineapple",isFull());
-
 addItem("Tomato",isFull());
  
+//End of stretch goal 3.
 
+function removeItem(item) {
+    if(basket.indexOf(item) ===-1)  {
+        console.log(item,"not found.")
+        console.log("Unchanged basket:",basket);
+         return null;
+    } else {
+        console.log(item,"found and removed");
+        console.log(basket.splice(basket.indexOf(item),1));
+        console.log("Basket with removed item:",basket);
+     }
+};
 
- 
+removeItem("BatteryAcid");
+removeItem("BatteryAcd");
+removeItem("");
+removeItem("Cucumbers");
+removeItem();
+removeItem("Apple");
 
-
-
-
-// The rest below here is not stretch goals or required work, just for styling purposes.
+// The code below is not stretch goals or required work, just added for styling purposes.
 
  function revealAll(event) {
     document.getElementById("YO").style.backgroundColor = "red";
     document.getElementsByTagName("li")[0].style.color = "white";
     document.getElementsByTagName("li")[1].style.color = "white";
     document.getElementsByTagName("li")[2].style.color = "white";
-
     document.getElementsByTagName("li")[3].style.color = "white";
 
- }
+ };
