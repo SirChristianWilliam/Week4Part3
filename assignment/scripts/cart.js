@@ -2,18 +2,28 @@ console.log('***** Cart Functions *****');
  // Make sure to test all functions here in the JS file!
 // We want to see how you are testing your code!!!
 let basket = [];
+console.log("Current basket:",basket);
 
-function addItem(item) {
-    console.log("Current basket:",basket);
+function addItem(item,full) {
 
-
-if(item) {
+    
+  if(item && full !== true) {
     console.log("Fruit was added:",true);
     basket.push(item);
+    console.log("Current basket:",basket);
 
+    return true;
+
+ } else if (item && full) {
+    console.log("Fruit was added:",false)
+    console.log("Current basket:",basket);
+
+    return false;
  } else {
     console.log("Fruit was added:",false);
     console.log("---undefined value not added to array---")
+
+    return false;
     
 }
 
@@ -81,25 +91,48 @@ console.log("Still globally returns",basket);
 // why this is, and sort of stumbled upon it by accident, but there ya go!
 
 console.log("----Stretch goals below!-----");
+
 const maxItems = 5;
-let answer;
+ 
+function isFull() {
 
-function isFull(x) {
-    if(x.length < maxItems ) {
-        answer = false;
-     } else {
-        answer = true;
-    }
-    if(answer == false) {
-        console.log(answer,"-There are less than",maxItems,"items in the basket: (",x.length,")");
-
-    } else {
-        console.log(answer,"-There are",maxItems,"or more items in the basket: (",x.length,")");
-
+    if(basket.length < maxItems ) {
+        console.log("-There are less than",maxItems,"items in the basket: (",basket.length,")");
+        return false;
+      } else {
+        console.log("-Can not add more than",maxItems,"items in the basket: (",basket.length,")");
+        return true;
      }
-}
+ }
 
- isFull(basket);
+ isFull();
+ 
+console.log("break-----");
+
+
+
+
+addItem("Peach",isFull());
+addItem("",isFull());
+addItem("Kiwi",isFull());
+addItem("BatteryAcid",isFull());
+addItem("",isFull());
+addItem("Coconut",isFull());
+
+addItem("Orange",isFull());
+
+addItem("pineapple",isFull());
+
+addItem("Tomato",isFull());
+ 
+
+
+ 
+
+
+
+
+// The rest below here is not stretch goals or required work, just for styling purposes.
 
  function revealAll(event) {
     document.getElementById("YO").style.backgroundColor = "red";
